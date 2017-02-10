@@ -17,6 +17,12 @@ npm i -S hubot-kitsu
 
 add `["hubot-kitsu"]` to `external-scripts.json`.
 
+## Example
+```bash
+hubot kitsu zenki
+```
+![as](http://pix.toile-libre.org/upload/original/1486703849.png)
+
 ## License
 
 [MIT](https://tldrlegal.com/license/mit-license)
