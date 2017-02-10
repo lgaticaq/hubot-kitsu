@@ -1,5 +1,7 @@
 # hubot-kitsu
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/lgaticaq/hubot-kitsu.svg)](https://greenkeeper.io/)
+
 [![npm version](https://img.shields.io/npm/v/hubot-kitsu.svg?style=flat-square)](https://www.npmjs.com/package/hubot-kitsu)
 [![npm downloads](https://img.shields.io/npm/dm/hubot-kitsu.svg?style=flat-square)](https://www.npmjs.com/package/hubot-kitsu)
 [![Build Status](https://img.shields.io/travis/lgaticaq/hubot-kitsu.svg?style=flat-square)](https://travis-ci.org/lgaticaq/hubot-kitsu)
