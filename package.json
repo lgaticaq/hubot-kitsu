@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "codeclimate-test-reporter": "^0.4.0",
+    "codeclimate-test-reporter": "^0.4.1",
     "coffee-coverage": "^1.0.1",
     "coffee-script": "^1.12.3",
     "coffeelint": "^1.16.0",
