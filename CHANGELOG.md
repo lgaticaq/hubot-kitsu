@@ -1,3 +1,25 @@
+#### 0.0.2 (2017-3-16)
+
+##### Chores
+
+* **package:**
+  * Upgrade coffee-coverage to v2.0.1 ([3c855dd2](https://github.com/lgaticaq/hubot-kitsu/commit/3c855dd21bdcd16375be7a05371f82890e276c4a))
+  * Upgrade coveralls to v2.12.0 ([ccc2645f](https://github.com/lgaticaq/hubot-kitsu/commit/ccc2645fbfeb9a54094d0c46b4e7b65cce9c110e))
+  * Upgrade coffee-script to v1.12.4 ([fbd2126a](https://github.com/lgaticaq/hubot-kitsu/commit/fbd2126a5e98442df2fc50486f491faa3d3fea72))
+  * Upgrade codeclimate-test-reporter to v0.4.1 ([d410996f](https://github.com/lgaticaq/hubot-kitsu/commit/d410996fc3efdfac2e893c251228d72fb14f9b48))
+* **tests:** Add more tests ([48e4f819](https://github.com/lgaticaq/hubot-kitsu/commit/48e4f8197d82fc7160bac13035bbd173a9caee58))
+
+##### Documentation Changes
+
+* **README:**
+  * Update screenshot ([da4f5850](https://github.com/lgaticaq/hubot-kitsu/commit/da4f585012cb166c7b5d76f864dc3f691177264b))
+  * Add example ([e935d74a](https://github.com/lgaticaq/hubot-kitsu/commit/e935d74a30e7494d0845d476133fc79261f8330d))
+* **readme:** add Greenkeeper badge ([226506bb](https://github.com/lgaticaq/hubot-kitsu/commit/226506bb1921e2103a9e53090e8ce53a2822c517))
+
+##### Bug Fixes
+
+* **format:** Change response format ([51d268aa](https://github.com/lgaticaq/hubot-kitsu/commit/51d268aa210df69c9ca6ed9a8f14156ac84189b8))
+
 #### 0.0.1 (2017-2-10)
 
 ##### Chores
