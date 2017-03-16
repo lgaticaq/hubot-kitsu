@@ -40,9 +40,9 @@ module.exports = (robot) ->
       averageRating = result.attributes.averageRating.toFixed(2)
       text = "#{result.attributes.canonicalTitle}\n"
       text += "#{result.attributes.synopsis}\n"
-      text += "Average Rating: #{averageRating}\n"
-      text += "Popularity Rank: #{result.attributes.popularityRank}\n"
-      text += "Rating Rank: #{result.attributes.ratingRank}\n"
+      text += "Average Rating: :star2: #{averageRating}\n"
+      text += "Popularity Rank: :heart: #{result.attributes.popularityRank}\n"
+      text += "Rating Rank: :star: #{result.attributes.ratingRank}\n"
       text += "Rating: #{result.attributes.ageRating}\n"
       text += "Aired: #{result.attributes.startDate}\n"
       text += "Status: #{status}\n"
@@ -55,8 +55,10 @@ module.exports = (robot) ->
       # Room is in test
       if robot.adapter.constructor.name in ["SlackBot", "Room"]
         options =
-          as_user: true
+          as_user: false
           link_names: 1
+          icon_url: icon
+          username: "Kitsu"
           unfurl_links: false
           attachments: [
             fallback: text
@@ -66,15 +68,15 @@ module.exports = (robot) ->
             text: result.attributes.synopsis
             fields: [
               title: "Average Rating"
-              value: averageRating
+              value: ":star2: #{averageRating}"
               short: true
             ,
               title: "Popularity Rank"
-              value: result.attributes.popularityRank
+              value: ":heart: #{result.attributes.popularityRank}"
               short: true
             ,
               title: "Rating Rank"
-              value: result.attributes.ratingRank
+              value: ":star: #{result.attributes.ratingRank}"
               short: true
             ,
               title: "Rating"
@@ -89,8 +91,6 @@ module.exports = (robot) ->
               value: status
               short: true
             ]
-            footer: "Kitsu API"
-            footer_icon: icon
           ]
         if result.attributes.coverImage isnt null
           image = result.attributes.coverImage.original

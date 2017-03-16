@@ -54,7 +54,7 @@ describe "hubot-kitsu", ->
   afterEach ->
     @room.destroy()
 
-  context "test", ->
+  context "Server error", ->
     beforeEach (done) ->
       @room.user.say("user", "hubot kitsu error")
       @room.robot.adapter.client =
@@ -67,13 +67,13 @@ describe "hubot-kitsu", ->
                 options: options
       setTimeout(done, 100)
 
-    it "should reply", ->
+    it "should respond with an error", ->
       expect(@room.messages).to.eql([
         ["user", "hubot kitsu error"],
         ["hubot", "An error has occurred: Server error"]
       ])
 
-  context "test", ->
+  context "Not found", ->
     beforeEach (done) ->
       @room.user.say("user", "hubot kitsu not found")
       @room.robot.adapter.client =
@@ -86,13 +86,13 @@ describe "hubot-kitsu", ->
                 options: options
       setTimeout(done, 100)
 
-    it "should reply", ->
+    it "should respond with an not found", ->
       expect(@room.messages).to.eql([
         ["user", "hubot kitsu not found"],
         ["hubot", "Not found *not found*"]
       ])
 
-  context "test", ->
+  context "Get data", ->
     beforeEach (done) ->
       @room.user.say("user", "hubot kitsu one piece")
       @room.robot.adapter.client =
@@ -105,16 +105,19 @@ describe "hubot-kitsu", ->
                 options: options
               done()
 
-    it "should reply", (done) ->
+    it "should respond with results", (done) ->
       expect(@postMessage.text).to.be.null
-      expect(@postMessage.options.as_user).to.be.true
+      expect(@postMessage.options.as_user).to.be.false
+      expect(@postMessage.options.username).to.eql("Kitsu")
+      expect(@postMessage.options.icon_url).to.eql(
+        "https://kitsu.io/favicon-32x32-3e0ecb6fc5a6ae681e65dcbc2bdf1f17.png")
       expect(@postMessage.options.link_names).to.equal 1
       expect(@postMessage.options.attachments).to.eql [
         fallback: "One Piece\n" +
           "Gol D. Roger was known as the Pirate King\n" +
-          "Average Rating: 3.52\n" +
-          "Popularity Rank: 1234\n" +
-          "Rating Rank: 2345\n" +
+          "Average Rating: :star2: 3.52\n" +
+          "Popularity Rank: :heart: 1234\n" +
+          "Rating Rank: :star: 2345\n" +
           "Rating: PG\n" +
           "Aired: 2000-01-01\n" +
           "Status: Currently Airing\n" +
@@ -126,15 +129,15 @@ describe "hubot-kitsu", ->
         fields: [
           short: true
           title: "Average Rating"
-          value: "3.52"
+          value: ":star2: 3.52"
         ,
           short: true
           title: "Popularity Rank"
-          value: 1234
+          value: ":heart: 1234"
         ,
           short: true
           title: "Rating Rank"
-          value: 2345
+          value: ":star: 2345"
         ,
           short: true
           title: "Rating"
@@ -152,13 +155,11 @@ describe "hubot-kitsu", ->
           title: "Video"
           value: "https://www.youtube.com/watch?v=um-tFlVamOI"
         ]
-        footer: "Kitsu API"
-        footer_icon: icon
         image_url: "http://coverImage.png"
       ]
       done()
 
-  context "test", ->
+  context "Get data with end date", ->
     beforeEach (done) ->
       @room.user.say("user", "hubot kitsu endDate")
       @room.robot.adapter.client =
@@ -171,16 +172,19 @@ describe "hubot-kitsu", ->
                 options: options
               done()
 
-    it "should reply", (done) ->
+    it "should respond with results", (done) ->
       expect(@postMessage.text).to.be.null
-      expect(@postMessage.options.as_user).to.be.true
+      expect(@postMessage.options.as_user).to.be.false
+      expect(@postMessage.options.username).to.eql("Kitsu")
+      expect(@postMessage.options.icon_url).to.eql(
+        "https://kitsu.io/favicon-32x32-3e0ecb6fc5a6ae681e65dcbc2bdf1f17.png")
       expect(@postMessage.options.link_names).to.equal 1
       expect(@postMessage.options.attachments).to.eql [
         fallback: "One Piece\n" +
           "Gol D. Roger was known as the Pirate King\n" +
-          "Average Rating: 3.52\n" +
-          "Popularity Rank: 1234\n" +
-          "Rating Rank: 2345\n" +
+          "Average Rating: :star2: 3.52\n" +
+          "Popularity Rank: :heart: 1234\n" +
+          "Rating Rank: :star: 2345\n" +
           "Rating: PG\n" +
           "Aired: 2000-01-01\n" +
           "Status: Finished Airing\n" +
@@ -193,15 +197,15 @@ describe "hubot-kitsu", ->
         fields: [
           short: true
           title: "Average Rating"
-          value: "3.52"
+          value: ":star2: 3.52"
         ,
           short: true
           title: "Popularity Rank"
-          value: 1234
+          value: ":heart: 1234"
         ,
           short: true
           title: "Rating Rank"
-          value: 2345
+          value: ":star: 2345"
         ,
           short: true
           title: "Rating"
@@ -223,13 +227,11 @@ describe "hubot-kitsu", ->
           title: "Duration"
           value: "24 min"
         ]
-        footer: "Kitsu API"
-        footer_icon: icon
         image_url: "http://posterImage.png"
       ]
       done()
 
-  context "test", ->
+  context "Get data with end date 2", ->
     beforeEach (done) ->
       @room.user.say("user", "hubot kitsu endDate2")
       @room.robot.adapter.client =
@@ -242,16 +244,19 @@ describe "hubot-kitsu", ->
                 options: options
               done()
 
-    it "should reply", (done) ->
+    it "should respond with results", (done) ->
       expect(@postMessage.text).to.be.null
-      expect(@postMessage.options.as_user).to.be.true
+      expect(@postMessage.options.as_user).to.be.false
+      expect(@postMessage.options.username).to.eql("Kitsu")
+      expect(@postMessage.options.icon_url).to.eql(
+        "https://kitsu.io/favicon-32x32-3e0ecb6fc5a6ae681e65dcbc2bdf1f17.png")
       expect(@postMessage.options.link_names).to.equal 1
       expect(@postMessage.options.attachments).to.eql [
         fallback: "One Piece\n" +
           "Gol D. Roger was known as the Pirate King\n" +
-          "Average Rating: 3.52\n" +
-          "Popularity Rank: 1234\n" +
-          "Rating Rank: 2345\n" +
+          "Average Rating: :star2: 3.52\n" +
+          "Popularity Rank: :heart: 1234\n" +
+          "Rating Rank: :star: 2345\n" +
           "Rating: PG\n" +
           "Aired: 2000-01-01\n" +
           "Status: Currently Airing\n" +
@@ -265,15 +270,15 @@ describe "hubot-kitsu", ->
         fields: [
           short: true
           title: "Average Rating"
-          value: "3.52"
+          value: ":star2: 3.52"
         ,
           short: true
           title: "Popularity Rank"
-          value: 1234
+          value: ":heart: 1234"
         ,
           short: true
           title: "Rating Rank"
-          value: 2345
+          value: ":star: 2345"
         ,
           short: true
           title: "Rating"
@@ -299,7 +304,5 @@ describe "hubot-kitsu", ->
           title: "Video"
           value: "https://www.youtube.com/watch?v=um-tFlVamOI"
         ]
-        footer: "Kitsu API"
-        footer_icon: icon
       ]
       done()
