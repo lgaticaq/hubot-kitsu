@@ -1,6 +1,6 @@
 {
   "name": "hubot-kitsu",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Hubot script to get anime data from kitsu",
   "main": "src",
   "scripts": {
