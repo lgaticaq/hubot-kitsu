@@ -37,7 +37,7 @@
     "chai": "^3.5.0",
     "codeclimate-test-reporter": "^0.4.1",
     "coffee-coverage": "^1.0.1",
-    "coffee-script": "^1.12.3",
+    "coffee-script": "^1.12.4",
     "coffeelint": "^1.16.0",
     "coveralls": "^2.11.16",
     "generate-changelog": "^1.1.0",

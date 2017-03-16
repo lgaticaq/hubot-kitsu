@@ -236,9 +236,13 @@ coffee-script@1.6.3:
   version "1.6.3"
   resolved "https://registry.npmjs.org/coffee-script/-/coffee-script-1.6.3.tgz#6355d32cf1b04cdff6b484e5e711782b2f0c39be"
 
-coffee-script@>=1.6.2, coffee-script@^1.12.3:
+coffee-script@>=1.6.2:
   version "1.12.3"
   resolved "https://registry.yarnpkg.com/coffee-script/-/coffee-script-1.12.3.tgz#de5f4b1b934a4e9f915c57acd7ad323f68f715db"
+
+coffee-script@^1.12.4:
+  version "1.12.4"
+  resolved "https://registry.npmjs.org/coffee-script/-/coffee-script-1.12.4.tgz#fe1bced97fe1fb3927b998f2b45616e0658be1ff"
 
 coffee-script@~1.11.0:
   version "1.11.1"
