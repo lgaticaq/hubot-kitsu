@@ -19,11 +19,7 @@ icon = "https://kitsu.io/favicon-32x32-3e0ecb6fc5a6ae681e65dcbc2bdf1f17.png"
 module.exports = (robot) ->
   robot.respond /kitsu (.+)$/, (res) ->
     query = res.match[1]
-    kitsu.searchAnime query, 0, (err, results) ->
-      if err
-        robot.emit("error", err)
-        res.send("An error has occurred: #{err.message}")
-        return
+    kitsu.searchAnime(query, 0).then (results) ->
       if results.length is 0
         res.send("Not found *#{query}*")
         return
@@ -117,3 +113,7 @@ module.exports = (robot) ->
           res.message.room, null, options)
       else
         res.send(text)
+    .catch (err) ->
+      robot.emit("error", err)
+      res.send("An error has occurred: #{err.message}")
+      return
