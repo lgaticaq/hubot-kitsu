@@ -1,3 +1,12 @@
+#### 0.0.3 (2017-5-11)
+
+##### Chores
+
+* **script:** Upgrade script to node-kitsu 1.0.0 ([11cc46d8](https://github.com/lgaticaq/hubot-kitsu/commit/11cc46d84845aa64728f6ec002e87970407e80aa))
+* **package:**
+  * Upgrade dependencies ([4582a531](https://github.com/lgaticaq/hubot-kitsu/commit/4582a53150a9e1f05d699bf4ef8b51b5f834bf0b))
+  * update coffee-coverage to version 2.0.0 ([7903ac6e](https://github.com/lgaticaq/hubot-kitsu/commit/7903ac6e6df5b6f0d048b91eac9f00278b34c9fa))
+
 #### 0.0.2 (2017-3-16)
 
 ##### Chores
