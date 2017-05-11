@@ -31,19 +31,19 @@
   },
   "homepage": "https://github.com/lgaticaq/hubot-kitsu#readme",
   "dependencies": {
-    "node-kitsu": "^0.3.4"
+    "node-kitsu": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "codeclimate-test-reporter": "^0.4.1",
     "coffee-coverage": "^2.0.1",
-    "coffee-script": "^1.12.4",
+    "coffee-script": "^1.12.5",
     "coffeelint": "^1.16.0",
-    "coveralls": "^2.12.0",
+    "coveralls": "^2.13.1",
     "generate-changelog": "^1.1.0",
     "hubot-test-helper": "^1.5.1",
     "istanbul": "^0.4.5",
-    "mocha": "^3.2.0",
+    "mocha": "^3.3.0",
     "proxyquire": "^1.7.11"
   }
 }

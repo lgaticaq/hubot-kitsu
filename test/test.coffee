@@ -5,44 +5,45 @@ proxyquire = require("proxyquire")
 icon = "https://kitsu.io/favicon-32x32-3e0ecb6fc5a6ae681e65dcbc2bdf1f17.png"
 
 kitsuStub =
-  searchAnime: (query, offset, cb) ->
-    result =
-      attributes:
-        ageRating: "PG"
-        averageRating: 3.52345
-        canonicalTitle: "One Piece"
-        coverImage:
-          original: "http://coverImage.png"
-        endDate: null
-        episodeCount: null
-        episodeLength: 24
-        popularityRank: 1234
-        posterImage:
-          original: "http://posterImage.png"
-        ratingRank: 2345
-        slug: "one-piece"
-        startDate: "2000-01-01"
-        synopsis: "Gol D. Roger was known as the Pirate King"
-        youtubeVideoId: "um-tFlVamOI"
-    if query is "not found"
-      cb(null, [])
-    else if query is "error"
-      cb(new Error("Server error"))
-    else if query is "endDate"
-      result.attributes.endDate = "2002-01-01"
-      result.attributes.episodeCount = 25
-      result.attributes.youtubeVideoId = null
-      result.attributes.coverImage = null
-      cb(null, [result])
-    else if query is "endDate2"
-      nextYear = (new Date).getFullYear() + 1
-      result.attributes.endDate = "#{nextYear}-01-01"
-      result.attributes.episodeCount = 25
-      result.attributes.coverImage = null
-      result.attributes.posterImage = null
-      cb(null, [result])
-    else
-      cb(null, [result])
+  searchAnime: (query, offset) ->
+    return new Promise (resolve, reject) ->
+      result =
+        attributes:
+          ageRating: "PG"
+          averageRating: 3.52345
+          canonicalTitle: "One Piece"
+          coverImage:
+            original: "http://coverImage.png"
+          endDate: null
+          episodeCount: null
+          episodeLength: 24
+          popularityRank: 1234
+          posterImage:
+            original: "http://posterImage.png"
+          ratingRank: 2345
+          slug: "one-piece"
+          startDate: "2000-01-01"
+          synopsis: "Gol D. Roger was known as the Pirate King"
+          youtubeVideoId: "um-tFlVamOI"
+      if query is "not found"
+        resolve([])
+      else if query is "error"
+        reject(new Error("Server error"))
+      else if query is "endDate"
+        result.attributes.endDate = "2002-01-01"
+        result.attributes.episodeCount = 25
+        result.attributes.youtubeVideoId = null
+        result.attributes.coverImage = null
+        resolve([result])
+      else if query is "endDate2"
+        nextYear = (new Date).getFullYear() + 1
+        result.attributes.endDate = "#{nextYear}-01-01"
+        result.attributes.episodeCount = 25
+        result.attributes.coverImage = null
+        result.attributes.posterImage = null
+        resolve([result])
+      else
+        resolve([result])
 
 proxyquire("./../src/script.coffee", {"node-kitsu": kitsuStub})
 helper = new Helper("./../src/index.coffee")
