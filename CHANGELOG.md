@@ -1,3 +1,18 @@
+#### 0.0.4 (2017-5-31)
+
+##### Chores
+
+* **package:**
+  * Update devDependencies ([5d9440ef](https://github.com/lgaticaq/hubot-kitsu/commit/5d9440ef33a0e3a916cbfbd63a2748444afdf0ea))
+  * update chai to version 4.0.0 ([8bc6025a](https://github.com/lgaticaq/hubot-kitsu/commit/8bc6025adc368b5ed93b2b011f9719e33b2a6125))
+
+##### Bug Fixes
+
+* **test:** fix tests ([4f292573](https://github.com/lgaticaq/hubot-kitsu/commit/4f292573d8478404352361d2a57fb14c15f0d1c9))
+* **attributes:**
+  * fix parse episodeLength ([3ec6e16b](https://github.com/lgaticaq/hubot-kitsu/commit/3ec6e16bf7de90aae1cda310ded8e8f6f188d57c))
+  * fix parse averageRating ([d948178e](https://github.com/lgaticaq/hubot-kitsu/commit/d948178ebcada167102500b19de4e0f5df1021ce))
+
 #### 0.0.3 (2017-5-11)
 
 ##### Chores
