@@ -33,7 +33,7 @@ module.exports = (robot) ->
           status = "Finished Airing"
         else
           status = "Currently Airing"
-      averageRating = result.attributes.averageRating.toFixed(2)
+      averageRating = result.attributes.averageRating
       text = "#{result.attributes.canonicalTitle}\n"
       text += "#{result.attributes.synopsis}\n"
       text += "Average Rating: :star2: #{averageRating}\n"
