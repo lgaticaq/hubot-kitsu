@@ -44,6 +44,7 @@ module.exports = (robot) ->
       text += "Status: #{status}\n"
       if result.attributes.episodeCount isnt null
         text += "Eposides: #{result.attributes.episodeCount}\n"
+      if result.attributes.episodeLength isnt null
         text += "Duration: #{result.attributes.episodeLength} min\n"
       if result.attributes.youtubeVideoId isnt null
         youtubeVideoId = result.attributes.youtubeVideoId
@@ -99,6 +100,7 @@ module.exports = (robot) ->
             title: "Eposides"
             value: result.attributes.episodeCount
             short: true
+        if result.attributes.episodeLength isnt null
           options.attachments[0].fields.push
             title: "Duration"
             value: "#{result.attributes.episodeLength} min"
