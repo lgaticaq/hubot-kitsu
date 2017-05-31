@@ -10,7 +10,7 @@ kitsuStub =
       result =
         attributes:
           ageRating: "PG"
-          averageRating: 3.52345
+          averageRating: "3.52"
           canonicalTitle: "One Piece"
           coverImage:
             original: "http://coverImage.png"
@@ -122,6 +122,7 @@ describe "hubot-kitsu", ->
           "Rating: PG\n" +
           "Aired: 2000-01-01\n" +
           "Status: Currently Airing\n" +
+          "Duration: 24 min\n" +
           "Video: https://www.youtube.com/watch?v=um-tFlVamOI"
         color: "#36a64f"
         title: "One Piece"
@@ -151,6 +152,10 @@ describe "hubot-kitsu", ->
           short: true
           title: "Status"
           value: "Currently Airing"
+        ,
+          short: true
+          title: "Duration"
+          value: "24 min"
         ,
           short: false
           title: "Video"
