@@ -8,4 +8,4 @@ test
 .travis.yml
 CHANGELOG.md
 LICENSE
-yarn.lock
+package-lock.json
