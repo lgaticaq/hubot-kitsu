@@ -4,9 +4,8 @@
   "description": "A Hubot script to get anime data from kitsu",
   "main": "src",
   "scripts": {
-    "pretest": "coffeelint src test",
-    "test": "mocha --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul",
-    "posttest": "istanbul report text-summary lcov",
+    "pretest": "standard src/**/*.js test/**/*.js",
+    "test": "istanbul cover _mocha",
     "coveralls": "coveralls < coverage/lcov.info",
     "codeclimate": "codeclimate-test-reporter < coverage/lcov.info",
     "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags && npm publish",
@@ -31,19 +30,24 @@
   },
   "homepage": "https://github.com/lgaticaq/hubot-kitsu#readme",
   "dependencies": {
-    "node-kitsu": "^1.0.0"
+    "fuse.js": "^3.0.4",
+    "kitsu.js": "^1.1.1"
   },
   "devDependencies": {
     "chai": "^4.0.1",
     "codeclimate-test-reporter": "^0.4.1",
-    "coffee-coverage": "^2.0.1",
     "coffee-script": "^1.12.6",
-    "coffeelint": "^1.16.0",
     "coveralls": "^2.13.1",
     "generate-changelog": "^1.1.0",
     "hubot-test-helper": "^1.5.1",
     "istanbul": "^0.4.5",
     "mocha": "^3.4.2",
-    "proxyquire": "^1.8.0"
+    "proxyquire": "^1.8.0",
+    "standard": "^10.0.2"
+  },
+  "standard": {
+    "env": {
+      "mocha": true
+    }
   }
 }
