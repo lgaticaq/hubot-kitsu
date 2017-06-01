@@ -1,3 +1,20 @@
+#### 0.0.5 (2017-6-1)
+
+##### Chores
+
+* **package:** replace node-kitsu to kitsu.js ([ce6993de](https://github.com/lgaticaq/hubot-kitsu/commit/ce6993ded9c49de6a04e6eec04a1d1a2798b72be))
+* **travis:**
+  * Add support to node v8 ([052d631f](https://github.com/lgaticaq/hubot-kitsu/commit/052d631fa2fe6db591ce1b70e7a46fce55439d3f))
+  * remove yarn cache ([fa8881be](https://github.com/lgaticaq/hubot-kitsu/commit/fa8881be061513fd6c5893a370e31e24318164a8))
+* **npm:**
+  * add package-lock.json to ignore ([82d2bd18](https://github.com/lgaticaq/hubot-kitsu/commit/82d2bd1886b93bf380b6521cd80b076d07542f66))
+  * replace yarn to npm 5 ([5cbeb9f1](https://github.com/lgaticaq/hubot-kitsu/commit/5cbeb9f169f74db4ed0c3fb65ed72190d89d7875))
+* **nvm:** update node version to v8 ([65469d3c](https://github.com/lgaticaq/hubot-kitsu/commit/65469d3c540174cac0fe8cedc6597a95af845013))
+
+##### New Features
+
+* **search:** add better search ([9a518caf](https://github.com/lgaticaq/hubot-kitsu/commit/9a518caf3bb0d3d6e13252a3f20311cbf5d46611))
+
 #### 0.0.4 (2017-5-31)
 
 ##### Chores
