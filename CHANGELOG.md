@@ -1,3 +1,35 @@
+#### 0.0.6 (2017-09-27)
+
+##### Chores
+
+* **package:**
+  * add keywords kitsu ([ca50548c](https://github.com/lgaticaq/hubot-kitsu/commit/ca50548c18fa359111b5cf1fac34e4f9e8dfe43a))
+  * replace standard to eslint + prettier + standard ([a1949a39](https://github.com/lgaticaq/hubot-kitsu/commit/a1949a39870ab6bd87902832e4df2795c86a93b1))
+  * update codeclimate-test-reporter to version 0.5.0 ([8a464f38](https://github.com/lgaticaq/hubot-kitsu/commit/8a464f380718a146302a02f0d5259788a23cfcea))
+* **renovate:** move renovate to package.json ([7bf9e990](https://github.com/lgaticaq/hubot-kitsu/commit/7bf9e990d188e2512c0eaf35604ebba517302896))
+* **deps:**
+  * update dependency generate-changelog to v1.5.0 ([51220843](https://github.com/lgaticaq/hubot-kitsu/commit/512208436be39811383a2c0f059bca482822f7e1))
+  * update dependency mocha to v3.5.3 ([2671d022](https://github.com/lgaticaq/hubot-kitsu/commit/2671d022b9d90fa490bf1778416f23de00ec7f7d))
+  * update dependency mocha to v3.5.2 ([6f503333](https://github.com/lgaticaq/hubot-kitsu/commit/6f50333314a49cdd1558c7d28db4e4810c99a2b5))
+  * update dependency mocha to v3.5.1 ([8841fd77](https://github.com/lgaticaq/hubot-kitsu/commit/8841fd77f8b8279bedf3397ddc8d7f2c8553f4bd))
+
+##### Continuous Integration
+
+* **coverage:** move coveralls and codeclimate to travis ([fceba193](https://github.com/lgaticaq/hubot-kitsu/commit/fceba193d6e0f9a98d44767169e78773fc4d57e5))
+
+##### Bug Fixes
+
+* **output:** fix typo ([bc204808](https://github.com/lgaticaq/hubot-kitsu/commit/bc20480837e7c486863e9c70a444d89490d8ab11))
+* **deps:** update dependency kitsu.js to v^2.0.0 ([6745e8cb](https://github.com/lgaticaq/hubot-kitsu/commit/6745e8cb95173e0788ed0489e4a7480b76a8856c))
+
+##### Refactors
+
+* **deps:** renovate pin dependencies packages ([85cbea3a](https://github.com/lgaticaq/hubot-kitsu/commit/85cbea3ae2570a204dbf5b62f9b856ae632e6f32))
+
+##### Code Style Changes
+
+* **standard:** fix code style ([e12d4e73](https://github.com/lgaticaq/hubot-kitsu/commit/e12d4e731a1998605d0d7ff48cfaa75bdda33f81))
+
 #### 0.0.5 (2017-6-1)
 
 ##### Chores
