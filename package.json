@@ -49,5 +49,9 @@
     "env": {
       "mocha": true
     }
+  },
+  "renovate": {
+    "automerge": "minor",
+    "extends": [":library"]
   }
 }
