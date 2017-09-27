@@ -221,7 +221,7 @@ describe('hubot-kitsu', function () {
       expect(this.postMessage.options.link_names).to.equal(1)
       expect(this.postMessage.options.attachments).to.eql([
         {
-          fallback: 'One Piece\n' + 'Gol D. Roger was known as the Pirate King\n' + 'Average Rating: :star2: 3.52\n' + 'Popularity Rank: :heart: 1234\n' + 'Rating Rank: :star: 2345\n' + 'Rating: PG\n' + 'Aired: 2000-01-01\n' + 'Status: Finished Airing\n' + 'Eposides: 25\n' + 'Duration: 24 min\n',
+          fallback: 'One Piece\n' + 'Gol D. Roger was known as the Pirate King\n' + 'Average Rating: :star2: 3.52\n' + 'Popularity Rank: :heart: 1234\n' + 'Rating Rank: :star: 2345\n' + 'Rating: PG\n' + 'Aired: 2000-01-01\n' + 'Status: Finished Airing\n' + 'Episodes: 25\n' + 'Duration: 24 min\n',
           color: '#36a64f',
           title: 'One Piece',
           title_link: 'https://kitsu.io/anime/one-piece',
@@ -253,7 +253,7 @@ describe('hubot-kitsu', function () {
               value: 'Finished Airing'
             }, {
               short: true,
-              title: 'Eposides',
+              title: 'Episodes',
               value: 25
             }, {
               short: true,
@@ -293,7 +293,7 @@ describe('hubot-kitsu', function () {
       expect(this.postMessage.options.link_names).to.equal(1)
       expect(this.postMessage.options.attachments).to.eql([
         {
-          fallback: 'One Piece\n' + 'Gol D. Roger was known as the Pirate King\n' + 'Average Rating: :star2: 3.52\n' + 'Popularity Rank: :heart: 1234\n' + 'Rating Rank: :star: 2345\n' + 'Rating: PG\n' + 'Aired: 2000-01-01\n' + 'Status: Currently Airing\n' + 'Eposides: 25\n' + 'Duration: 24 min\n' + 'Video: https://www.youtube.com/watch?v=um-tFlVamOI',
+          fallback: 'One Piece\n' + 'Gol D. Roger was known as the Pirate King\n' + 'Average Rating: :star2: 3.52\n' + 'Popularity Rank: :heart: 1234\n' + 'Rating Rank: :star: 2345\n' + 'Rating: PG\n' + 'Aired: 2000-01-01\n' + 'Status: Currently Airing\n' + 'Episodes: 25\n' + 'Duration: 24 min\n' + 'Video: https://www.youtube.com/watch?v=um-tFlVamOI',
           color: '#36a64f',
           title: 'One Piece',
           title_link: 'https://kitsu.io/anime/one-piece',
@@ -325,7 +325,7 @@ describe('hubot-kitsu', function () {
               value: 'Currently Airing'
             }, {
               short: true,
-              title: 'Eposides',
+              title: 'Episodes',
               value: 25
             }, {
               short: true,

@@ -64,7 +64,7 @@ module.exports = robot => {
       text += `Aired: ${result.startDate}\n`
       text += `Status: ${status}\n`
       if (result.episodeCount !== null) {
-        text += `Eposides: ${result.episodeCount}\n`
+        text += `Episodes: ${result.episodeCount}\n`
       }
       if (result.episodeLength !== null) {
         text += `Duration: ${result.episodeLength} min\n`
@@ -127,7 +127,7 @@ module.exports = robot => {
         }
         if (result.episodeCount !== null) {
           options.attachments[0].fields.push({
-            title: 'Eposides',
+            title: 'Episodes',
             value: result.episodeCount,
             short: true
           })
