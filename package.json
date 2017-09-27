@@ -23,7 +23,8 @@
   },
   "keywords": [
     "hubot",
-    "hubot-scripts"
+    "hubot-scripts",
+    "kitsu"
   ],
   "author": "Leonardo Gatica",
   "license": "MIT",
