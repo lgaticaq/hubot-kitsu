@@ -41,7 +41,7 @@ class KitsuStub {
         result.coverImage = null
         resolve([result])
       } else if (query === 'endDate2') {
-        const nextYear = (new Date()).getFullYear() + 1
+        const nextYear = new Date().getFullYear() + 1
         result.endDate = `${nextYear}-01-01`
         result.episodeCount = 25
         result.coverImage = null
@@ -51,8 +51,8 @@ class KitsuStub {
         resolve([result])
       }
     })
-  };
-};
+  }
+}
 
 class FuseStub {
   constructor (list, options) {
@@ -62,7 +62,7 @@ class FuseStub {
 
   search () {
     return this.list
-  };
+  }
 }
 
 proxyquire('./../src/script.js', {
@@ -98,7 +98,10 @@ describe('hubot-kitsu', function () {
       setTimeout(done, 100)
     })
     it('should respond with an error', () => {
-      expect(this.room.messages).to.eql([['user', 'hubot kitsu error'], ['hubot', 'An error has occurred: Server error']])
+      expect(this.room.messages).to.eql([
+        ['user', 'hubot kitsu error'],
+        ['hubot', 'An error has occurred: Server error']
+      ])
     })
   })
   context('Not found', () => {
@@ -120,7 +123,10 @@ describe('hubot-kitsu', function () {
       setTimeout(done, 100)
     })
     it('should respond with an not found', () => {
-      expect(this.room.messages).to.eql([['user', 'hubot kitsu not found'], ['hubot', 'Not found *not found*']])
+      expect(this.room.messages).to.eql([
+        ['user', 'hubot kitsu not found'],
+        ['hubot', 'Not found *not found*']
+      ])
     })
   })
   context('Get data', () => {
@@ -145,11 +151,23 @@ describe('hubot-kitsu', function () {
       expect(this.postMessage.text).to.eql(null)
       expect(this.postMessage.options.as_user).to.eql(false)
       expect(this.postMessage.options.username).to.eql('Kitsu')
-      expect(this.postMessage.options.icon_url).to.eql('https://kitsu.io/favicon-32x32-3e0ecb6fc5a6ae681e65dcbc2bdf1f17.png')
+      expect(this.postMessage.options.icon_url).to.eql(
+        'https://kitsu.io/favicon-32x32-3e0ecb6fc5a6ae681e65dcbc2bdf1f17.png'
+      )
       expect(this.postMessage.options.link_names).to.equal(1)
       expect(this.postMessage.options.attachments).to.eql([
         {
-          fallback: 'One Piece\n' + 'Gol D. Roger was known as the Pirate King\n' + 'Average Rating: :star2: 3.52\n' + 'Popularity Rank: :heart: 1234\n' + 'Rating Rank: :star: 2345\n' + 'Rating: PG\n' + 'Aired: 2000-01-01\n' + 'Status: Currently Airing\n' + 'Duration: 24 min\n' + 'Video: https://www.youtube.com/watch?v=um-tFlVamOI',
+          fallback:
+            'One Piece\n' +
+            'Gol D. Roger was known as the Pirate King\n' +
+            'Average Rating: :star2: 3.52\n' +
+            'Popularity Rank: :heart: 1234\n' +
+            'Rating Rank: :star: 2345\n' +
+            'Rating: PG\n' +
+            'Aired: 2000-01-01\n' +
+            'Status: Currently Airing\n' +
+            'Duration: 24 min\n' +
+            'Video: https://www.youtube.com/watch?v=um-tFlVamOI',
           color: '#36a64f',
           title: 'One Piece',
           title_link: 'https://kitsu.io/anime/one-piece',
@@ -159,31 +177,38 @@ describe('hubot-kitsu', function () {
               short: true,
               title: 'Average Rating',
               value: ':star2: 3.52'
-            }, {
+            },
+            {
               short: true,
               title: 'Popularity Rank',
               value: ':heart: 1234'
-            }, {
+            },
+            {
               short: true,
               title: 'Rating Rank',
               value: ':star: 2345'
-            }, {
+            },
+            {
               short: true,
               title: 'Rating',
               value: 'PG'
-            }, {
+            },
+            {
               short: true,
               title: 'Aired',
               value: '2000-01-01'
-            }, {
+            },
+            {
               short: true,
               title: 'Status',
               value: 'Currently Airing'
-            }, {
+            },
+            {
               short: true,
               title: 'Duration',
               value: '24 min'
-            }, {
+            },
+            {
               short: false,
               title: 'Video',
               value: 'https://www.youtube.com/watch?v=um-tFlVamOI'
@@ -217,11 +242,23 @@ describe('hubot-kitsu', function () {
       expect(this.postMessage.text).to.eql(null)
       expect(this.postMessage.options.as_user).to.eql(false)
       expect(this.postMessage.options.username).to.eql('Kitsu')
-      expect(this.postMessage.options.icon_url).to.eql('https://kitsu.io/favicon-32x32-3e0ecb6fc5a6ae681e65dcbc2bdf1f17.png')
+      expect(this.postMessage.options.icon_url).to.eql(
+        'https://kitsu.io/favicon-32x32-3e0ecb6fc5a6ae681e65dcbc2bdf1f17.png'
+      )
       expect(this.postMessage.options.link_names).to.equal(1)
       expect(this.postMessage.options.attachments).to.eql([
         {
-          fallback: 'One Piece\n' + 'Gol D. Roger was known as the Pirate King\n' + 'Average Rating: :star2: 3.52\n' + 'Popularity Rank: :heart: 1234\n' + 'Rating Rank: :star: 2345\n' + 'Rating: PG\n' + 'Aired: 2000-01-01\n' + 'Status: Finished Airing\n' + 'Episodes: 25\n' + 'Duration: 24 min\n',
+          fallback:
+            'One Piece\n' +
+            'Gol D. Roger was known as the Pirate King\n' +
+            'Average Rating: :star2: 3.52\n' +
+            'Popularity Rank: :heart: 1234\n' +
+            'Rating Rank: :star: 2345\n' +
+            'Rating: PG\n' +
+            'Aired: 2000-01-01\n' +
+            'Status: Finished Airing\n' +
+            'Episodes: 25\n' +
+            'Duration: 24 min\n',
           color: '#36a64f',
           title: 'One Piece',
           title_link: 'https://kitsu.io/anime/one-piece',
@@ -231,31 +268,38 @@ describe('hubot-kitsu', function () {
               short: true,
               title: 'Average Rating',
               value: ':star2: 3.52'
-            }, {
+            },
+            {
               short: true,
               title: 'Popularity Rank',
               value: ':heart: 1234'
-            }, {
+            },
+            {
               short: true,
               title: 'Rating Rank',
               value: ':star: 2345'
-            }, {
+            },
+            {
               short: true,
               title: 'Rating',
               value: 'PG'
-            }, {
+            },
+            {
               short: true,
               title: 'Aired',
               value: '2000-01-01'
-            }, {
+            },
+            {
               short: true,
               title: 'Status',
               value: 'Finished Airing'
-            }, {
+            },
+            {
               short: true,
               title: 'Episodes',
               value: 25
-            }, {
+            },
+            {
               short: true,
               title: 'Duration',
               value: '24 min'
@@ -289,11 +333,24 @@ describe('hubot-kitsu', function () {
       expect(this.postMessage.text).to.eql(null)
       expect(this.postMessage.options.as_user).to.eql(false)
       expect(this.postMessage.options.username).to.eql('Kitsu')
-      expect(this.postMessage.options.icon_url).to.eql('https://kitsu.io/favicon-32x32-3e0ecb6fc5a6ae681e65dcbc2bdf1f17.png')
+      expect(this.postMessage.options.icon_url).to.eql(
+        'https://kitsu.io/favicon-32x32-3e0ecb6fc5a6ae681e65dcbc2bdf1f17.png'
+      )
       expect(this.postMessage.options.link_names).to.equal(1)
       expect(this.postMessage.options.attachments).to.eql([
         {
-          fallback: 'One Piece\n' + 'Gol D. Roger was known as the Pirate King\n' + 'Average Rating: :star2: 3.52\n' + 'Popularity Rank: :heart: 1234\n' + 'Rating Rank: :star: 2345\n' + 'Rating: PG\n' + 'Aired: 2000-01-01\n' + 'Status: Currently Airing\n' + 'Episodes: 25\n' + 'Duration: 24 min\n' + 'Video: https://www.youtube.com/watch?v=um-tFlVamOI',
+          fallback:
+            'One Piece\n' +
+            'Gol D. Roger was known as the Pirate King\n' +
+            'Average Rating: :star2: 3.52\n' +
+            'Popularity Rank: :heart: 1234\n' +
+            'Rating Rank: :star: 2345\n' +
+            'Rating: PG\n' +
+            'Aired: 2000-01-01\n' +
+            'Status: Currently Airing\n' +
+            'Episodes: 25\n' +
+            'Duration: 24 min\n' +
+            'Video: https://www.youtube.com/watch?v=um-tFlVamOI',
           color: '#36a64f',
           title: 'One Piece',
           title_link: 'https://kitsu.io/anime/one-piece',
@@ -303,35 +360,43 @@ describe('hubot-kitsu', function () {
               short: true,
               title: 'Average Rating',
               value: ':star2: 3.52'
-            }, {
+            },
+            {
               short: true,
               title: 'Popularity Rank',
               value: ':heart: 1234'
-            }, {
+            },
+            {
               short: true,
               title: 'Rating Rank',
               value: ':star: 2345'
-            }, {
+            },
+            {
               short: true,
               title: 'Rating',
               value: 'PG'
-            }, {
+            },
+            {
               short: true,
               title: 'Aired',
               value: '2000-01-01'
-            }, {
+            },
+            {
               short: true,
               title: 'Status',
               value: 'Currently Airing'
-            }, {
+            },
+            {
               short: true,
               title: 'Episodes',
               value: 25
-            }, {
+            },
+            {
               short: true,
               title: 'Duration',
               value: '24 min'
-            }, {
+            },
+            {
               short: false,
               title: 'Video',
               value: 'https://www.youtube.com/watch?v=um-tFlVamOI'
