@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/lgaticaq/hubot-kitsu#readme",
   "dependencies": {
-    "fuse.js": "^3.0.4",
+    "fuse.js": "^6.0.0",
     "kitsu.js": "^2.0.0"
   },
   "devDependencies": {
